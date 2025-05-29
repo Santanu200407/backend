@@ -1,0 +1,8 @@
+1) Mongoose
+2) Express
+3)Json Web Token
+4)bcryptjs
+*routers like receptionist
+*controller like water its have all logic
+*models like cook it required database connection
+sequence of creation->models,controller,routers
