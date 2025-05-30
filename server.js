@@ -8,6 +8,7 @@ const server_config=require("./configs/server.config")
 const db_config=require("./configs/db.config")
 const user_model=require("./models/user.model")
 const bcrypt=require("bcryptjs")
+app.use(express.json())
 /**
  * Create an admin user at the starting of the application
  * if not already present
@@ -33,6 +34,9 @@ async function init(){
         console.log("Error while reading the data",err)
     }
     
+//git remote add origin https://github.com/your-username/your-repo.git
+//git push -u origin main
+
     try{
         user=await user_model.create({
             name:"Santanu",
@@ -46,6 +50,10 @@ async function init(){
         console.log("While creating admin: ",err)
     }
 }
+/**
+ * Stich the route to the server
+ */
+require("./routes/auth.routes")(app)
 /**
  * Start the server
  */
